@@ -7,6 +7,7 @@ import {
   Param,
   Patch,
   Post,
+  Query,
   Request,
   UseGuards,
 } from '@nestjs/common';
@@ -31,6 +32,11 @@ export class AppointmentController {
   @Get()
   findAll() {
     return this.appointmentService.findAll();
+  }
+  
+  @Get('filter')
+  findSome(@Query('time') time: string, @Query('firstName') firstName: string) {
+    return this.appointmentService.findSome(time, firstName);
   }
 
   @Get(':id')
