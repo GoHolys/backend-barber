@@ -32,6 +32,7 @@ export class AppointmentService {
       },
       data: updateAppointmentDto,
     });
+    console.log(updateAppointment);
     return updateAppointment;
   }
 
